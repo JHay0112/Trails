@@ -1,0 +1,19 @@
+@charset "UTF-8"; /* Set charset UTF-8 */
+
+/* 
+    css/styles.css
+    Author(s): Jordan Hay
+*/
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap'); 
+
+/* Anything that isn't a heading should use Open Sane */
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Headings use Montserrat */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
