@@ -75,3 +75,35 @@ footer#page-footer {
 footer#page-footer small, footer#page-footer small a {
     color: white;
 }
+
+/* Page specific styles below this point */
+
+/* Index Body */
+main#index-body {
+    background-image: url(../img/index-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    height: 100vh; /* 100% height of viewport */
+    background-color: ghostwhite; /* If image doesn't load fast enough */
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+}
+
+/* Index Content */
+main#index-body section#content {
+    background-color: RGBA(255, 255, 255, 0.9);
+    padding: 25px;
+    position: relative;
+    top: -10%; 
+    text-align: center;
+}
+
+/* Heading Size */
+main#index-body section#content h1 {
+    font-size: 28pt;
+}
