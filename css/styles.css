@@ -8,9 +8,12 @@
 /* Import Fonts */
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap'); 
 
-/* Anything that isn't a heading should use Open Sans */
+/* Every Element (Ones below will overide) */
 * {
     font-family: 'Open Sans', sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body, html {
@@ -23,9 +26,6 @@ body, html {
 /* Mobile */
 [class*="col-"] {
     width: 100%;
-}
-
-[class*="col-"] {
     float: left;
     padding: 5px;
 }
@@ -47,7 +47,7 @@ body, html {
     .col-5 {width: 41.66%;}
     .col-6 {width: 50%;}
     .col-7 {width: 58.33%;}
-    .col-8, div#main {width: 66.66%;}
+    .col-8 {width: 66.66%;}
     .col-9 {width: 75%;}
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
@@ -59,6 +59,36 @@ body, html {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
+}
+
+/* Horizontal Line */
+hr {
+    opacity: 0.2;
+}
+
+nav {
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: RGBA(0, 0, 0, 0.6);
+    font-size: 15pt;
+    padding: 7px 8px;
+    transform: scale(1);
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: RGBA(0, 0, 0, 0.9);
+}
+
+nav a.active, nav a.active:hover {
+    text-decoration: underline;
+    color: seagreen;
+    transform: scale(1);
+    cursor: default;
 }
 
 /* Page Footer */
