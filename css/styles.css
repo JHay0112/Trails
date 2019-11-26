@@ -66,10 +66,12 @@ hr {
     opacity: 0.2;
 }
 
+/* Nav */
 nav {
     text-align: center;
 }
 
+/* Nav Links */
 nav a {
     text-decoration: none;
     color: RGBA(0, 0, 0, 0.6);
@@ -81,10 +83,12 @@ nav a {
     margin: 0px 10px;
 }
 
+/* Nav Link when hovered over */
 nav a:hover {
     color: RGBA(0, 0, 0, 0.9);
 }
 
+/* Active Nav Link */
 nav a.active, nav a.active:hover {
     border: seagreen 1px solid;
     color: seagreen;
