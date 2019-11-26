@@ -78,6 +78,7 @@ nav a {
     transform: scale(1);
     transition: all 0.2s ease;
     display: inline-block;
+    margin: 0px 10px;
 }
 
 nav a:hover {
@@ -85,7 +86,7 @@ nav a:hover {
 }
 
 nav a.active, nav a.active:hover {
-    text-decoration: underline;
+    border: seagreen 1px solid;
     color: seagreen;
     transform: scale(1);
     cursor: default;
