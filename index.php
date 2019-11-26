@@ -14,11 +14,7 @@
     <section id="content" class="col-8">
         <h1>Timaru Trails</h1>
         <hr />
-        <nav>
-            <a href="/" class="active">Home</a>
-            <a href="search.php">Search Trails</a>
-            <a href="about.php">About</a>
-        </nav>
+        <?php require("res/nav.php"); ?>
         <hr />
         <p>Looking for walking tracks or hikes in Timaru and South Canterbury? Timaru Trails has a vast collection of trails for you to try. Just click on "Search Trails" to get started.</p>
     </section>
