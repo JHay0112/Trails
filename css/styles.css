@@ -97,6 +97,19 @@ nav a.active, nav a.active:hover {
     border-radius: 3px;
 }
 
+/* Font Awesome Icons */
+.fa {
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    opacity: 0.9;
+}
+
+.fa:hover {
+    opacity: 0.6;
+}
+
 /* Page Footer */
 footer#page-footer {
     position: fixed;
@@ -110,6 +123,11 @@ footer#page-footer {
 /* Page Footer Text */
 footer#page-footer small, footer#page-footer small a {
     color: white;
+}
+
+footer#page-footer small p {
+    margin: 0;
+    margin-bottom: 4px;
 }
 
 /* Page specific styles below this point */

@@ -16,7 +16,7 @@
         <hr />
         <?php require("res/nav.php"); ?>
         <hr />
-        <p>Looking for walking tracks or hikes in Timaru and South Canterbury? Timaru Trails has a vast collection of trails for you to try. Just click on "Search Trails" to get started.</p>
+        <p>Looking for walking tracks or hikes in Timaru and South Canterbury?<br />Timaru Trails has a vast collection of trails for you to try. Just click on "Search Trails" to get started.</p>
     </section>
     <div class="col-3 desktop-only"></div>
 </main>
