@@ -4,23 +4,11 @@
         Author(s): Jordan Hay
     */
 
-    function console_log($data) {
-        print '<script>';
-        print 'console.log('. json_encode( $data ) .')';
-        print '</script>';
-    }
-
     function checkIfActive($expected_title) {
-        console_log("Test");
-        console_log($title);
-        console_log($expected_title);
-        if($title == $expected_title) {
-            console_log("yes");
+        if($GLOBALS["title"] === $expected_title) {
             print("active");
         }
     }
-
-    console_log("Test");
 
 ?>
 <nav>
