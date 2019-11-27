@@ -14,7 +14,8 @@
     }
 
 ?>
-<nav>
+<nav id="page-nav">
+    <a href="javascript:void(0)" id="nav-toggle" onclick="toggleNav()"><span class="fa fa-bars"></span></a>
     <a href="/" class="<?php checkIfActive("Home"); ?>">Home</a>
     <a href="search.php" class="<?php checkIfActive("Search Trails"); ?>" >Search Trails</a>
     <a href="about.php" class="<?php checkIfActive("About"); ?>" >About</a>

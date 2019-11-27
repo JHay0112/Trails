@@ -20,6 +20,8 @@
         </footer>
 
         <!-- Scripts -->
+        <!-- General Script -->
+        <script src="js/main.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109227996-3"></script>
         <script>
