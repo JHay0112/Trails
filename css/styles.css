@@ -66,6 +66,21 @@ hr {
     opacity: 0.2;
 }
 
+/* Header */
+header {
+    text-align: center;
+}
+
+/* Banner */
+header div#banner {
+    height: 17vh; /* 17% of viewport */
+    width: 100%;
+    background-image: url(../img/index-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 /* Nav */
 nav {
     text-align: center;
