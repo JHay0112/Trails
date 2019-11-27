@@ -78,7 +78,7 @@ header div#banner {
     background-image: url(../img/index-background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center 70%;
 }
 
 /* Nav */
