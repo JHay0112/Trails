@@ -11,4 +11,13 @@
     require("res/connect.php"); // Connect to database
 ?>
 
+<main class="col-12">
+    <div class="col-2"></div>
+    <section class="col-8">
+        <h2>Search</h2>
+        
+    </section>
+    <div class="col-2"></div>
+</main>
+
 <?php require("res/foot.php"); ?>
