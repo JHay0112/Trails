@@ -157,6 +157,16 @@ nav #nav-toggle {
     opacity: 0.6;
 }
 
+#page-main {
+    padding-bottom: 20px; /* To offset footer */
+}
+
+/* Sections on standard pages */
+/* This is a bodge solution, need to replace with something more elegant */
+#page-main section.col-8 {
+    margin-left: 16.66%;
+}
+
 /* Page Footer */
 footer#page-footer {
     position: fixed;
