@@ -12,7 +12,7 @@
         $stmt = $link->prepare($query);
         $stmt->bind_param("s", $_GET["trail"]);
         $stmt->execute();
-        $stmt->bind_result($trail_id, $trail_name, $trail_area, $trail_desc, $trail_map, $trail_gps, $trail_dist, $trail_walk_time, $trail_elevation_change);
+        $stmt->bind_result($trail_id, $trail_name, $trail_area, $trail_desc, $trail_map, $trail_dist, $trail_walk_time, $trail_elevation_change);
         $stmt->fetch();
     } catch(\Exception $e) {
         print("Failed to connect to Database");
@@ -58,6 +58,7 @@
                     print($trail_elevation_change."m");
                 }
             ?></h5>
+            <h5>Download GPS file <a href="gps/<?php print($trail_id); ?>.gpx" download="<?php print($trail_name); ?>">here</a>.</h5>
         </article>
         <aside class="col-6">
             <img class="col-12" src="img/trails/<?php print($trail_id); ?>.jpg" />
