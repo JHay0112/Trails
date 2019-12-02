@@ -129,12 +129,17 @@ nav #nav-toggle {
         width: 90%;
         margin: 5px auto;
         padding: 5px;
+        transition: none;
     }
 
     nav.mobile {
         display: block; 
         overflow: hidden; 
         margin: 0;
+    }
+
+    nav.mobile a#nav-toggle {
+        margin-top: 0px;
     }
 
     nav.mobile a {
