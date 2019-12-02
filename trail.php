@@ -58,7 +58,11 @@
                     print($trail_elevation_change."m");
                 }
             ?></h5>
-            <h5>Download GPS file <a href="gps/<?php print($trail_id); ?>.gpx" download="<?php print($trail_name); ?>">here</a>.</h5>
+            <?php
+                if(file_exists("gps/".$trail_id.".gpx")){
+                    print("<h5>Download GPS file <a href=\"gps/".$trail_id.".gpx\" download=\"".$trail_name."\">here</a>.</h5>");
+                }
+            ?>
         </article>
         <aside class="col-6">
             <img class="col-12" src="img/trails/<?php print($trail_id); ?>.jpg" />
