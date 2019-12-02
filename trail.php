@@ -18,6 +18,16 @@
         print("Failed to connect to Database");
     }
 
+    // If trail does not exist fill with artificial values
+    if($trail_name == ""){
+        $trail_name = "Trail Not Found";
+        $trail_area = "Nowhere?";
+        $trail_desc = "Uh oh. This trail does not exist. We're sorry for any inconvenience. Click <a href=\"search.php\">here</a> to return to the the search page.";
+        $trail_dist = 0;
+        $trail_walk_time = 0;
+        $trail_elevation_change = 0;
+    }
+
     $title = $trail_name;
 
     require("res/head.php"); // Require template for top of page/metadata
@@ -26,8 +36,7 @@
 
 <main class="col-12" id="page-main">
     <section class="col-8">
-        <h2><?php print($trail_name); ?></h2>
-        <article class="col-6">
+        <article class="col-7">
             <h4><i class="fa fa-map-marker"></i> <?php print($trail_area); ?></h4>
             <p><?php print($trail_desc); ?></p>
             <h5>Distance: ~<?php 
@@ -59,14 +68,23 @@
                 }
             ?></h5>
             <?php
-                if(file_exists("gps/".$trail_id.".gpx")){
-                    print("<h5>Download GPS file <a href=\"gps/".$trail_id.".gpx\" download=\"".$trail_name."\">here</a>.</h5>");
+                // If GPS file can be found then offer a download option
+                $gps = "gps/".$trail_id.".gpx";                
+
+                if(file_exists($gps)){
+                    print("<h5>Download GPS file <a href=\".$gps.\" download=\"".$trail_name."\">here</a>.</h5>");
                 }
             ?>
         </article>
-        <aside class="col-6">
-            <img class="col-12" src="img/trails/<?php print($trail_id); ?>.jpg" />
-            <?php
+        <aside class="col-5">
+            <?php 
+                // If Image is availiable then display
+                $img = "img/trails/".$trail_id.".jpg";
+            
+                if(file_exists($img)) {
+                    print("<img class=\"col-12\" src=\"".$img."\" alt=\"".$trail_name."\" />");
+                } 
+
                 // Make sure there is a trail map to offer before displaying one
                 if($trail_map != ""){
                     print("<iframe class=\"col-12\" src=\"https://www.google.com/maps/d/u/0/embed?mid=1wgG0fulZ0oCkexfsMlz27TqQimbRGvbp".$trail_map."\" height=\"360\"></iframe>");
