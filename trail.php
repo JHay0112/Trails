@@ -33,11 +33,11 @@
             <h5>Distance: ~<?php 
                 // Round distances
                 if (strlen((string)$trail_dist) == 5) {
-                    print(substr($trail_dist, 0, 1).substr($trail_dist, 1, 1)."km");
+                    print(round(($trail_dist / 1000), 0)."km");
                 } elseif(strlen((string)$trail_dist) == 4) {
-                    print(substr($trail_dist, 0, 1).".".substr($trail_dist, 1, 1)."km");
+                    print(round(($trail_dist / 1000), 1)."km");
                 } else {
-                    print($trail_dist."m");
+                    print(round($trail_dist, -1)."m");
                 }
             ?></h5>
             <h5>Walk Time: ~<?php
@@ -51,11 +51,11 @@
             <h5>Elevation Change: &plusmn<?php
                 // Round elevations
                 if (strlen((string)$trail_elevation_change) == 5) {
-                    print(substr($trail_elevation_change, 0, 1).substr($trail_elevation_change, 1, 1)."km");
+                    print(round(($trail_elevation_change / 1000), 0)."km");
                 } elseif(strlen((string)$trail_elevation_change) == 4) {
-                    print(substr($trail_elevation_change, 0, 1).".".substr($trail_elevation_change, 1, 1)."km");
+                    print(round(($trail_elevation_change / 1000), 1)."km");
                 } else {
-                    print($trail_elevation_change."m");
+                    print(round(($trail_elevation_changes / 1000), -1)."m");
                 }
             ?></h5>
             <?php
