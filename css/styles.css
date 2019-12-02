@@ -127,7 +127,8 @@ nav #nav-toggle {
     nav a#nav-toggle {
         display: block;
         width: 90%;
-        margin: 3px auto;
+        margin: 5px auto;
+        padding: 5px;
     }
 
     nav.mobile {
