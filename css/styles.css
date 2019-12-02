@@ -163,9 +163,8 @@ nav #nav-toggle {
     opacity: 0.6;
 }
 
-/* Standard page basic style */
 #page-main {
-    padding-bottom: 20px; /* To offset footer */
+    padding-bottom: 40px; /* To offset footer */
 }
 
 /* Sections on standard pages */
