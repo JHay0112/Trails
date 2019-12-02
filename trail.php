@@ -55,7 +55,7 @@
                 } elseif(strlen((string)$trail_elevation_change) == 4) {
                     print(round(($trail_elevation_change / 1000), 1)."km");
                 } else {
-                    print(round(($trail_elevation_changes / 1000), -1)."m");
+                    print(round($trail_elevation_change, -1)."m");
                 }
             ?></h5>
             <?php
