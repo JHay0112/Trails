@@ -179,6 +179,10 @@ nav #nav-toggle {
     }
 }
 
+iframe {
+    border: 0px solid RGBA(0, 0, 0, 0);
+}
+
 /* Page Footer */
 footer#page-footer {
     position: fixed;
