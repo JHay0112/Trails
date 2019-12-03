@@ -38,7 +38,6 @@
     <section class="col-8">
         <article class="col-7">
             <h4><i class="fa fa-map-marker"></i> <?php print($trail_area); ?></h4>
-            <p><?php print($trail_desc); ?></p>
             <h5>Distance: ~<?php 
                 // Round distances
                 if (strlen((string)$trail_dist) == 5) {
@@ -67,12 +66,13 @@
                     print(round($trail_elevation_change, -1)."m");
                 }
             ?></h5>
+            <p><?php print($trail_desc); ?></p>
             <?php
                 // If GPS file can be found then offer a download option
                 $gps = "gps/".$trail_id.".gpx";                
 
                 if(file_exists($gps)){
-                    print("<h5>Download GPS file <a href=\".$gps.\" download=\"".$trail_name."\">here</a>.</h5>");
+                    print("<h5>Download GPS file <a href=\"".$gps."\" download=\"".$trail_name."\">here</a>.</h5>");
                 }
             ?>
         </article>
