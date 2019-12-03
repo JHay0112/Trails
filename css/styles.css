@@ -235,3 +235,20 @@ main#index-body section#content {
 main#index-body section#content h1 {
     font-size: 28pt;
 }
+
+/* Trail styles, mainly for getting trail image and trail info the same height */
+#trail-main {
+    display: flex;
+}
+
+#trail-image, #trail-info {
+    flex: 1;
+}
+
+/* Image of trail */
+#trail-img {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

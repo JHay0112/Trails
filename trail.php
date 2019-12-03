@@ -35,8 +35,8 @@
 ?>
 
 <main class="col-12" id="page-main">
-    <section class="col-8">
-        <article class="col-7">
+    <section class="col-8" id="trail-main">
+        <article class="col-7" id="trail-info">
             <h4><i class="fa fa-map-marker"></i> <?php print($trail_area); ?></h4>
             <h5>Distance: ~<?php 
                 // Round distances
@@ -76,22 +76,24 @@
                 }
             ?>
         </article>
-        <aside class="col-5">
+        <aside class="col-5 desktop-only" id="trail-img-container">
             <?php 
                 // If Image is availiable then display
                 $img = "img/trails/".$trail_id.".jpg";
             
                 if(file_exists($img)) {
-                    print("<img class=\"col-12\" src=\"".$img."\" alt=\"".$trail_name."\" />");
+                    print("<aside id=\"trail-img\" class=\"col-12\" style=\"background-image: url(".$img.");\"></aside");
                 } 
-
-                // Make sure there is a trail map to offer before displaying one
-                if($trail_map != ""){
-                    print("<iframe class=\"col-12\" src=\"https://www.google.com/maps/d/u/0/embed?mid=1wgG0fulZ0oCkexfsMlz27TqQimbRGvbp".$trail_map."\" height=\"360\"></iframe>");
-                }
             ?>
-            
         </aside>
+    </section>
+    <section class="col-8" id="trail-map-container">
+        <?php
+            // Make sure there is a trail map to offer before displaying one
+            if($trail_map != ""){
+                print("<iframe id=\"trail-map\" class=\"col-12\" src=\"https://www.google.com/maps/d/u/0/embed?mid=1wgG0fulZ0oCkexfsMlz27TqQimbRGvbp".$trail_map."\" height=\"360\"></iframe>");
+            }
+        ?>
     </section>
 </main>
 
