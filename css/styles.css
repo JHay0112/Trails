@@ -252,3 +252,38 @@ main#index-body section#content h1 {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+/* Handle how the attributes are displayed*/
+#attribute-container {
+    margin-bottom: 10px;
+}
+
+.attribute {
+    position: relative;
+    display: inline-block;
+}
+
+.attribute .attribute-text {
+    visibility: hidden;
+    background-color: RGBA(0, 0, 0, 0.9);
+    color: white;
+    white-space: nowrap;
+    text-align: center;
+    padding: 6px;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 1;
+    top: 60%;
+    left: -6px;
+}
+
+.attribute-image {
+    position: relative;
+    left: -5px;
+    width: 30px;
+    margin-right: 5px;
+}
+
+.attribute-image:hover + .attribute-text {
+    visibility: visible;
+}
