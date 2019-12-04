@@ -159,7 +159,7 @@ nav #nav-toggle {
     opacity: 0.9;
 }
 
-.fa:hover {
+.fa.social:hover {
     opacity: 0.6;
 }
 
