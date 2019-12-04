@@ -35,6 +35,11 @@
                 print("<h5>".$result["trail_name"]."</h5>");
                 print("<p><i class=\"fa fa-map-marker\"></i>".$result["trail_area"]."</p>");
                 print("</section>");
+                $result_check = True; // Used to check that a result has been printed.
+            }
+
+            if($result_check == False) {
+                print("<h4>No results.</h4>");
             }
         ?>
     </section>
