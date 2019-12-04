@@ -259,22 +259,35 @@ main#index-body section#content h1 {
 }
 
 .attribute {
-    position: relative;
+    position: static;
     display: inline-block;
 }
 
 .attribute .attribute-text {
-    visibility: hidden;
+    display: none;
     background-color: RGBA(0, 0, 0, 0.9);
     color: white;
-    white-space: nowrap;
     text-align: center;
     padding: 6px;
     border-radius: 3px;
-    position: absolute;
     z-index: 1;
-    top: 60%;
-    left: -6px;
+    position: absolute;
+    width: 100vw;
+    left: 0;
+}
+
+/* Desktop style */
+@media only screen and (min-width: 768px) {
+    .attribute {
+        position: relative;
+    }
+
+    .attribute .attribute-text {
+        white-space: nowrap;
+        top: -50%;
+        left: 80%;
+        width: auto;
+    }
 }
 
 .attribute-image {
@@ -282,8 +295,13 @@ main#index-body section#content h1 {
     left: -5px;
     width: 30px;
     margin-right: 5px;
+    transition: all 0.2s ease;
+}
+
+.attribute-image:hover {
+    transform: scale(1.1);
 }
 
 .attribute-image:hover + .attribute-text {
-    visibility: visible;
+    display: block;
 }
