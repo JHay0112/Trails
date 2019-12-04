@@ -20,7 +20,7 @@
         $trail_id = "";
     }
 
-    // $trail_id is a safe value to put into the queries without preparing as it is a known and valid value
+    // $trail_id is a safe value to put into the queries without preparing as it is a known and valid value from the database
 
     // If trail does not exist fill with artificial values
     if($trail_id == ""){
@@ -32,12 +32,9 @@
         $trail_elevation_change = 0;
     } else {
         // We know that the trail we have is valid, now we need to load the attributes of the trail
-        try {
-            $sql = "SELECT * FROM `attributes` WHERE `attribute_id`IN (SELECT `attribute_id` FROM `trail_attributes` WHERE `trail_id` = ".$trail_id.");";
-            $attributes = $link->query($sql);
-        } catch(\Exception $e) {
-            // Do nothing
-        }
+        // This requires a seperate query due to the way it is stored in the database
+        $sql = "SELECT * FROM `attributes` WHERE `attribute_id` IN (SELECT `attribute_id` FROM `trail_attributes` WHERE `trail_id` = ".$trail_id.");";
+        $attributes = $link->query($sql);
     }
 
     $title = $trail_name;
