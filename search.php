@@ -11,7 +11,7 @@
     require("res/connect.php"); // Connect to database
 
     // By setting these $_GET to be an int SQL injection is not possible
-    $page = (int) $_GET["page"]; // Page number
+    $page = max((int) $_GET["page"], 0); // Page number, always rounded to zero or above
     $trails_to_load = (int) $_GET["load"]; // The amount of trails to load on one page
 
     // Keep $trails_to_load on one page in reasonable bounds

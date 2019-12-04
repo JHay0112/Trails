@@ -6,7 +6,7 @@
 
     require("res/connect.php"); // Connect to database
 
-    $trail_id = (int) $_GET["trail"]; // Will always be integer, thus do not need
+    $trail_id = max((int) $_GET["trail"], 0); // Will always be integer rounded to zero if less than 1 or string
 
     if($trail_id != 0) {
         try {
