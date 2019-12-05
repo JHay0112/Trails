@@ -16,7 +16,7 @@
         <p>Timaru Trails was thought up by <a href="https://jordanhay.tk/" target="_blank">Jordan Hay</a> in early 2018. In late 2019 he actually bothered to make it.</p>
         <p>Timaru Trails is designed to document the trails in Timaru and South Canterbury to allow people who live in or are visting South Canterbury to easily find trails to enjoy.</p>
         <p>All trails have been documented, photographed, and mapped by <a href="https://jordanhay.tk/" target="_blank">Jordan Hay</a>.</p>
-        <p>Trail descriptions were written with the help of Tanya Smith. You can find her Instagram <a href="https://www.instagram.com/_.tanyasmith/" target="_blank">here</a>.</p>
+        <p>Trail descriptions were written with the help of Tanya Smith. You can find her Instagram account <a href="https://www.instagram.com/tanyadoesart_/" target="_blank">here</a>.</p>
         <p>You can scrutinise the code that makes this website run <a href="https://github.com/JHay0112/Trails" target="_blank">here</a>.</p>
     </section>
     <section class="col-8">
