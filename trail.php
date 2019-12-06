@@ -101,10 +101,19 @@
                 $img = "img/trails/".$trail_id.".jpg";
             
                 if(file_exists($img)) {
-                    print("<aside id=\"trail-img\" class=\"col-12\" style=\"background-image: url(".$img.");\"></aside");
+                    print("<aside class=\"col-12 trail-img\" style=\"background-image: url(".$img.");\"></aside>");
                 } 
             ?>
         </aside>
+    </section>
+    <section class="col-8 mobile-only">
+        <?php
+            // $img already defined above
+
+            if(file_exists($img)) {
+                print("<aside id=\"mobile-trail-img\" class=\"col-12 trail-img\" style=\"background-image: url(".$img.");\"></aside>");
+            } 
+        ?>
     </section>
     <section class="col-8" id="trail-map-container">
         <?php
