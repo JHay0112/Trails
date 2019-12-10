@@ -25,14 +25,15 @@
 
     // Keep $trails_to_load on one page in reasonable bounds
     if(($trails_to_load < 5) or ($trails_to_load > 100)) {
-        $trails_to_load = 10;
+        $trails_to_load = 20;
     } 
 
     try {
+        // Get trail results
         $sql = "SELECT * FROM `trails` LIMIT ".($page * $trails_to_load).", ".(($page + 1) * $trails_to_load).";";
         $results = $link->query($sql);
     } catch(\Exception $e) {
-        
+
     }
 ?>
 
@@ -49,14 +50,29 @@
                     print("<td>".$result["trail_name"]."</td>");
                     print("<td>".$result["trail_area"]."</td>");
                     print("</tr>");
-                    $result_check = True; // Used to check that a result has been printed.
-                }
-
-                if($result_check == False) {
-                    print("<h4>No results.</h4>");
+                    $trails_loaded++;
                 }
             ?>
         </table>
+        <section class="col-12">
+            <?php
+                // No results notice
+                if($trails_loaded == 0) {
+                    print("<h4>No results.</h4>");
+                }
+
+                // Back button
+                if($page != 0) {
+                    print("<a href=\"search.php?page=".($page - 1)."&load=".$trails_to_load."\">Previous Page</a>");
+                }
+
+                // Next page button
+                // If the amount of trails loaded is not the same as the trails to load then do not offer another page
+                if($trails_loaded == $trails_to_load) {
+                    print("<a href=\"search.php?page=".($page + 1)."&load=".$trails_to_load."\">Next Page</a>");
+                }
+            ?>
+        </section>
     </section>
 </main>
 
