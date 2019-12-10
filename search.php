@@ -3,7 +3,7 @@
         search.php
         Author(s): Jordan Hay
     */
-
+    
     $title = "Search Trails"; // Set title for head.php
 
     require("res/head.php"); // Require template for top of page/metadata
@@ -28,17 +28,33 @@
         $trails_to_load = 20;
     } 
 
-    try {
-        // Get trail results
-        $sql = "SELECT * FROM `trails` LIMIT ".($page * $trails_to_load).", ".(($page + 1) * $trails_to_load).";";
-        $results = $link->query($sql);
-    } catch(\Exception $e) {
+    // If search term is set then use it in the query
+    if(isset($_GET["term"])) {
+        $term = $_GET["term"]; // Handle with care
+        $term = "%".$term."%"; // Add wildcards
+        $sql = "SELECT `trail_id`, `trail_name`, `trail_area` FROM `trails` WHERE ((`trail_name` LIKE ?) or (`trail_desc` LIKE ?)) LIMIT ".($page * $trails_to_load).", ".(($page + 1) * $trails_to_load).";";
+        $stmt = $link->prepare($sql);
+        $stmt->bind_param("ss", $term, $term);
+        $stmt->execute();
+        $results = $stmt->get_result();
+    } else {
+        // Else use default query
+        try {
+            // Get trail results
+            $sql = "SELECT `trail_id`, `trail_name`, `trail_area` FROM `trails` LIMIT ".($page * $trails_to_load).", ".(($page + 1) * $trails_to_load).";";
+            $results = $link->query($sql);
+        } catch(\Exception $e) {
 
+        }
     }
 ?>
 
 <main class="col-12" id="page-main">
     <section class="col-8">
+        <form class="col-12" action="search.php" method="GET">
+            <input class="col-10" type="text" name="term" placeholder="Search..." />
+            <input class="col-2" type="submit" value="Search" />
+        </form>
         <table class="col-12" id="search-results">
             <tr>
                 <th>Trail</th>
