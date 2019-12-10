@@ -38,19 +38,25 @@
 
 <main class="col-12" id="page-main">
     <section class="col-8">
-        <?php
-            while($result = $results->fetch_assoc()) {
-                print("<section class=\"col-12 result\">");
-                print("<h5>".$result["trail_name"]."</h5>");
-                print("<p><i class=\"fa fa-map-marker\"></i>".$result["trail_area"]."</p>");
-                print("</section>");
-                $result_check = True; // Used to check that a result has been printed.
-            }
+        <table class="col-12" id="search-results">
+            <tr>
+                <th>Trail</th>
+                <th>Location</th>
+            </tr>
+            <?php
+                while($result = $results->fetch_assoc()) {
+                    print("<tr onclick=\"window.location='trail.php?trail=".$result["trail_id"]."'\">");
+                    print("<td>".$result["trail_name"]."</td>");
+                    print("<td>".$result["trail_area"]."</td>");
+                    print("</tr>");
+                    $result_check = True; // Used to check that a result has been printed.
+                }
 
-            if($result_check == False) {
-                print("<h4>No results.</h4>");
-            }
-        ?>
+                if($result_check == False) {
+                    print("<h4>No results.</h4>");
+                }
+            ?>
+        </table>
     </section>
 </main>
 
