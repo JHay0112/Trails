@@ -193,6 +193,7 @@ footer#page-footer {
     width: 100%;
     text-align: center;
     background-color: black;
+    z-index: 9999999999999999; /* Ridiculous z-index to hide powered by 000webhost banner that looks tacky */
 }
 
 /* Page Footer Text */
