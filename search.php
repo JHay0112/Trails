@@ -32,10 +32,10 @@
     if(isset($_GET["term"])) {
         try {
             $term = $_GET["term"]; // Handle with care
-            $term = "%".$term."%"; // Add wildcards
+            $sanitised_term = "%".$term."%";
             $sql = "SELECT `trail_id`, `trail_name`, `trail_area` FROM `trails` WHERE ((`trail_name` LIKE ?) or (`trail_desc` LIKE ?)) LIMIT ".($page * $trails_to_load).", ".(($page + 1) * $trails_to_load).";";
             $stmt = $link->prepare($sql);
-            $stmt->bind_param("ss", $term, $term);
+            $stmt->bind_param("ss", $sanitised_term, $sanitised_term);
             $stmt->execute();
             $results = $stmt->get_result();
         } catch(\Exception $e) {
@@ -83,13 +83,13 @@
 
                 // Back button
                 if($page != 0) {
-                    print("<a href=\"search.php?page=".($page - 1)."&load=".$trails_to_load."\">Previous Page</a>");
+                    print("<a href=\"search.php?page=".($page - 1)."&load=".$trails_to_load."&term=".$term."\">Previous Page</a>");
                 }
 
                 // Next page button
                 // If the amount of trails loaded is not the same as the trails to load then do not offer another page
                 if($trails_loaded == $trails_to_load) {
-                    print("<a href=\"search.php?page=".($page + 1)."&load=".$trails_to_load."\">Next Page</a>");
+                    print("<a href=\"search.php?page=".($page + 1)."&load=".$trails_to_load."&term=".$term."\">Next Page</a>");
                 }
             ?>
         </section>
