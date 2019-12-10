@@ -242,17 +242,20 @@ main#index-body section#content h1 {
     display: flex;
 }
 
-#trail-image, #trail-info {
-    flex: 1;
-}
-
 /* Image of trail */
-#trail-img {
+.trail-img {
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-color: RGBA(0, 0, 0, 0.6); /* Look cleaner on load? */
+    min-height: 200px;
+}
+
+.trail-img#mobile-trail-img {
+    width: 100%;
+    border-left: 5px solid white; /* Cut down image on either side */
+    border-right: 5px solid white; /* Cut down image on either side */
 }
 
 /* Handle how the attributes are displayed*/
@@ -306,4 +309,35 @@ main#index-body section#content h1 {
 
 .attribute-image:hover + .attribute-text {
     display: block;
+}
+
+/* Search results */
+table#search-results {
+    border-collapse: collapse;
+}
+
+table#search-results td, table#search-results th {
+    border: 1px solid RGBA(0, 0, 0, 0.1);
+    padding: 8px;
+}
+
+table#search-results tr:nth-child(even) {
+    background-color: RGBA(0, 0, 0, 0.05);
+}
+
+table#search-results tr {
+    transition: ease all 0.2s;
+}
+
+table#search-results tr:hover {
+    background-color: RGBA(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+table#search-results th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: seagreen;
+    color: white;
 }
