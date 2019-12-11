@@ -353,7 +353,7 @@ form#trail-search input, form#trail-search p {
     background-color: white;
     border: 1px solid RGBA(0, 0, 0, 0.1);
     height: 40px;
-    margin: -1px;
+    margin: 0px;
     border-radius: 3px;
 }
 
