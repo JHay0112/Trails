@@ -366,3 +366,22 @@ form#trail-search input[type="submit"]:hover {
     background-color: RGBA(0, 0, 0, 0.1);
     cursor: pointer;
 }
+
+/* Page navigation buttons for search */
+a.navigate-result-buttons {
+    text-decoration: none;
+    color: RGBA(0, 0, 0, 0.7);
+    transition: all ease 0.2s;
+}
+
+a.navigate-result-buttons:hover {
+    color: RGBA(0, 0, 0, 0.9);
+}
+
+a.navigate-result-buttons#next-page-button {
+    float: left;
+}
+
+a.navigate-result-buttons#next-page-button {
+    float: right;
+}

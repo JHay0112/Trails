@@ -85,13 +85,13 @@
 
                 // Back button
                 if($page != 0) {
-                    print("<a class=\"navigate-result-buttons\" id=\"previous-page-button\" href=\"search.php?page=".($page - 1)."&load=".$trails_to_load."&term=".$term."\">Previous Page</a>");
+                    print("<a class=\"navigate-result-buttons\" id=\"previous-page-button\" href=\"search.php?page=".($page - 1)."&load=".$trails_to_load."&term=".$term."\"><span class=\"fa fa-arrow-left\"></span> Previous Page</a>");
                 }
 
                 // Next page button
                 // If the amount of trails loaded is not the same as the trails to load then do not offer another page
                 if($trails_loaded == $trails_to_load) {
-                    print("<a class=\"navigate-result-buttons\" id=\"next-page-button\" href=\"search.php?page=".($page + 1)."&load=".$trails_to_load."&term=".$term."\">Next Page</a>");
+                    print("<a class=\"navigate-result-buttons\" id=\"next-page-button\" href=\"search.php?page=".($page + 1)."&load=".$trails_to_load."&term=".$term."\">Next Page <span class=\"fa fa-arrow-right\"></span></a>");
                 }
             ?>
         </section>
