@@ -56,7 +56,7 @@
 
 <main class="col-12" id="page-main">
     <section class="col-8">
-        <form id="trail-search" class="col-12" action="/search" method="GET">
+        <form id="trail-search" class="col-12" action="/search" method="GET" autocomplete="off">
             <input class="col-12" type="text" name="term" placeholder="&#xF002;&nbsp;&nbsp;Search" style="font-family: FontAwesome, 'Open Sans', sans-serif;" value="<?php print($term); ?>" />
             <p class="col-5">Number of trails to load per page:</p>
             <input class="col-1" type="number" name="load" min="5" max="100" value="<?php print($trails_to_load); ?>" />
