@@ -33,9 +33,9 @@
         try {
             $term = $_GET["term"]; // Handle with care
             $sanitised_term = "%".$term."%";
-            $sql = "SELECT `trail_id`, `trail_name`, `trail_area` FROM `trails` WHERE ((`trail_name` LIKE ?) or (`trail_desc` LIKE ?)) LIMIT ".($page * $trails_to_load).", ".(($page + 1) * $trails_to_load).";";
+            $sql = "SELECT `trail_id`, `trail_name`, `trail_area` FROM `trails` WHERE ((`trail_name` LIKE ?) OR (`trail_desc` LIKE ?) OR (`trail_area` LIKE ?)) LIMIT ".($page * $trails_to_load).", ".(($page + 1) * $trails_to_load).";";
             $stmt = $link->prepare($sql);
-            $stmt->bind_param("ss", $sanitised_term, $sanitised_term);
+            $stmt->bind_param("sss", $sanitised_term, $sanitised_term, $sanitised_term);
             $stmt->execute();
             $results = $stmt->get_result();
         } catch(\Exception $e) {
@@ -55,9 +55,11 @@
 
 <main class="col-12" id="page-main">
     <section class="col-8">
-        <form class="col-12" action="search.php" method="GET">
-            <input class="col-10" type="text" name="term" placeholder="Search..." />
-            <input class="col-2" type="submit" value="Search" />
+        <form id="trail-search" class="col-12" action="search.php" method="GET">
+            <input class="col-12" type="text" name="term" placeholder="Search..." value="<?php print($term); ?>" />
+            <p class="col-5">Number of trails to load per page:</p>
+            <input class="col-1" type="number" name="load" min="5" max="100" value="<?php print($trails_to_load); ?>" />
+            <input class="col-6" type="submit" value="Search" />
         </form>
         <table class="col-12" id="search-results">
             <tr>
@@ -83,13 +85,13 @@
 
                 // Back button
                 if($page != 0) {
-                    print("<a href=\"search.php?page=".($page - 1)."&load=".$trails_to_load."&term=".$term."\">Previous Page</a>");
+                    print("<a class=\"navigate-result-buttons\" id=\"previous-page-button\" href=\"search.php?page=".($page - 1)."&load=".$trails_to_load."&term=".$term."\">Previous Page</a>");
                 }
 
                 // Next page button
                 // If the amount of trails loaded is not the same as the trails to load then do not offer another page
                 if($trails_loaded == $trails_to_load) {
-                    print("<a href=\"search.php?page=".($page + 1)."&load=".$trails_to_load."&term=".$term."\">Next Page</a>");
+                    print("<a class=\"navigate-result-buttons\" id=\"next-page-button\" href=\"search.php?page=".($page + 1)."&load=".$trails_to_load."&term=".$term."\">Next Page</a>");
                 }
             ?>
         </section>
