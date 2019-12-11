@@ -333,6 +333,9 @@ table#search-results tr {
 
 table#search-results tr:hover {
     background-color: RGBA(0, 0, 0, 0.1);
+}
+
+table#search-results td {
     cursor: pointer;
 }
 
@@ -342,4 +345,15 @@ table#search-results th {
     text-align: left;
     background-color: seagreen;
     color: white;
+}
+
+/* Search form */
+form#trail-search input, form#trail-search p {
+    padding: 5px;
+    background-color: white;
+    border: 1px solid RGBA(0, 0, 0, 0.1);
+    height: 40px;
+    margin: -1px;
+    margin-top: 4px;
+    border-radius: 3px;
 }
