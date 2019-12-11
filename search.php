@@ -32,7 +32,7 @@
     if(isset($_GET["term"])) {
         try {
             $term = $_GET["term"]; // Handle with care
-            $term = preg_replace("/[^a-zA-Z]/", "", $term);;
+            $term = preg_replace("/[^a-zA-Z]/", "", $term);
             $sanitised_term = "%".$term."%";
             $sql = "SELECT `trail_id`, `trail_name`, `trail_area` FROM `trails` WHERE ((`trail_name` LIKE ?) OR (`trail_desc` LIKE ?) OR (`trail_area` LIKE ?)) LIMIT ".($page * $trails_to_load).", ".(($page + 1) * $trails_to_load).";";
             $stmt = $link->prepare($sql);
