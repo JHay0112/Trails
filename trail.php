@@ -28,7 +28,7 @@
     } else {
         $trail["trail_name"] = "Trail Not Found";
         $trail["trail_area"] = "Nowhere?";
-        $trail["trail_desc"] = "Uh oh. This trail does not exist. We're sorry for any inconvenience. Click <a href=\"search.php\">here</a> to return to the the search page.";
+        $trail["trail_desc"] = "Uh oh. This trail does not exist. We're sorry for any inconvenience. Click <a href=\"/search\">here</a> to return to the the search page.";
         $trail["trail_distance"] = 0;
         $trail["trail_walk_time"] = 0;
         $trail["trail_elevation_change"] = 0;
