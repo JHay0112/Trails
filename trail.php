@@ -91,7 +91,7 @@
                 $gps = "gps/".$trail_id.".gpx";                
 
                 if(file_exists($gps)){
-                    print("<h5>Download GPS file <a href=\"".$gps."\" download=\"".$trail["trail_name"]."\">here</a>.</h5>");
+                    print("<h5>Download GPS file <a href=\"".$gps."\" download=\"".$trail["trail_name"].".gpx\">here</a>.</h5>");
                 }
             ?>
         </article>
