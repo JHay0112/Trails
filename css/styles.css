@@ -363,6 +363,6 @@ form#trail-search input[type="submit"] {
 }
 
 form#trail-search input[type="submit"]:hover {
-    background-color: RGBA(0, 0, 0, 0.2);
+    background-color: RGBA(0, 0, 0, 0.1);
     cursor: pointer;
 }
