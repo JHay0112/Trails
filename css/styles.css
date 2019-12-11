@@ -357,3 +357,12 @@ form#trail-search input, form#trail-search p {
     margin-top: 4px;
     border-radius: 3px;
 }
+
+form#trail-search input[type="submit"] {
+    transition: 0.2s ease all;
+}
+
+form#trail-search input[type="submit"]:hover {
+    background-color: RGBA(0, 0, 0, 0.2);
+    cursor: pointer;
+}
