@@ -9,14 +9,24 @@
         // If not then make the title the file name of the current page.
         $title = basename($_SERVER["PHP_SELF"]);
     }
+
+    require("connect.php");
+
+    // Add all track names to keywords
+    try {
+        $sql = "SELECT `trail_name` FROM `trails`;";
+        $results = $link->query($sql);
+    } catch(\Exception $e) {
+
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <!-- Meta Data -->
         <meta charset="UTF-8" />
-        <meta name="description" content="Trails and Tracks in Timaru." />
-        <meta name="keywords" content="Timaru, Trails, New Zealand, Walking, Timaru Trails, Hiking, Strolling, South Canterbury, Canterbury" />
+        <meta name="description" content="A collection of the trails and tracks in Timaru and beyond." />
+        <meta name="keywords" content="Timaru, Trails, New Zealand, Walking, Timaru Trails, Hiking, Strolling, South Canterbury, Canterbury, Walk, Bike, Run, Stroll, Hike, Jordan Hay, Geraldine, Temuka<?php while($result = $results->fetch_assoc()) {print(", ".$result["trail_name"]);} ?>" />
         <meta name="author" content="Jordan Hay" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
