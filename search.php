@@ -34,7 +34,7 @@
             $term = $_GET["term"]; // Handle with care
             $term = preg_replace("/[^a-zA-Z\s]/", "", $term);
             $sanitised_term = "%".$term."%";
-            $sql = "SELECT `trail_id`, `trail_name`, `trail_area` FROM `trails` WHERE ((`trail_name` LIKE ?) OR (`trail_desc` LIKE ?) OR (`trail_area` LIKE ?)) LIMIT ".($page * $trails_to_load).", ".(($page + 1) * $trails_to_load).";";
+            $sql = "SELECT `trail_id`, `trail_name`, `trail_area`, `trail_desc` FROM `trails` WHERE ((`trail_name` LIKE ?) OR (`trail_desc` LIKE ?) OR (`trail_area` LIKE ?)) LIMIT ".($page * $trails_to_load).", ".(($page + 1) * $trails_to_load).";";
             $stmt = $link->prepare($sql);
             $stmt->bind_param("sss", $sanitised_term, $sanitised_term, $sanitised_term);
             $stmt->execute();
@@ -46,7 +46,7 @@
         // Else use default query
         try {
             // Get trail results
-            $sql = "SELECT `trail_id`, `trail_name`, `trail_area` FROM `trails` LIMIT ".($page * $trails_to_load).", ".(($page + 1) * $trails_to_load).";";
+            $sql = "SELECT `trail_id`, `trail_name`, `trail_area`, `trail_desc` FROM `trails` LIMIT ".($page * $trails_to_load).", ".(($page + 1) * $trails_to_load).";";
             $results = $link->query($sql);
         } catch(\Exception $e) {
 
@@ -69,7 +69,11 @@
             </tr>
             <?php
                 while($result = $results->fetch_assoc()) {
-                    print("<tr onclick=\"window.location='trail?trail=".$result["trail_id"]."'\">");
+                    print("<tr onclick=\"window.location='trail?trail=".$result["trail_id"]."'\"");
+                    if($result["trail_desc"] == "") {
+                        print("class=\"incomplete\"");
+                    }
+                    print(">");
                     print("<td>".$result["trail_name"]."</td>");
                     print("<td>".$result["trail_area"]."</td>");
                     print("</tr>");

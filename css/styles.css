@@ -347,6 +347,10 @@ table#search-results th {
     color: white;
 }
 
+.incomplete {
+    background-color: yellow;
+}
+
 /* Search form */
 form#trail-search input, form#trail-search p {
     padding: 5px;
