@@ -70,9 +70,11 @@
             <?php
                 while($result = $results->fetch_assoc()) {
                     print("<tr onclick=\"window.location='trail?trail=".$result["trail_id"]."'\"");
+                    /* Temporarily removing this due to some weird issues, everything should work without it
                     if($result["trail_desc"] == "") {
                         print("class=\"incomplete\"");
                     }
+                    */
                     print(">");
                     print("<td>".$result["trail_name"]."</td>");
                     print("<td>".$result["trail_area"]."</td>");
