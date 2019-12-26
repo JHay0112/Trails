@@ -20,7 +20,7 @@
     if(isset($_GET["load"])) {
         $trails_to_load = (int) $_GET["load"]; // The amount of trails to load on one page
     } else {
-        $trails_to_load = 10;
+        $trails_to_load = 20;
     }
 
     // Keep $trails_to_load on one page in reasonable bounds
