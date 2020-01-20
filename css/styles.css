@@ -315,16 +315,17 @@ main#index-body section#content h1 {
 
 /* Search results */
 table#search-results {
+    margin-top: 20px;
     border-collapse: collapse;
 }
 
 table#search-results td, table#search-results th {
-    border: 1px solid RGBA(0, 0, 0, 0.1);
+    border: 1px solid RGBA(0, 0, 0, 0.05);
     padding: 8px;
 }
 
 table#search-results tr:nth-child(even) {
-    background-color: RGBA(0, 0, 0, 0.05);
+    background-color: RGBA(0, 0, 0, 0.025);
 }
 
 table#search-results tr {
@@ -332,7 +333,7 @@ table#search-results tr {
 }
 
 table#search-results tr:hover {
-    background-color: RGBA(0, 0, 0, 0.1);
+    background-color: RGBA(0, 0, 0, 0.075);
 }
 
 table#search-results td {
@@ -356,9 +357,18 @@ form#trail-search input, form#trail-search p {
     padding: 5px;
     background-color: white;
     border: 1px solid RGBA(0, 0, 0, 0.1);
+    border-right: none;
     height: 40px;
     margin: 0px;
-    border-radius: 3px;
+}
+
+form#trail-search input:last-child, form#trail-search input:first-child {
+    border-right: 1px solid RGBA(0, 0, 0, 0.1);
+}
+
+form#trail-search input:first-child {
+    position: relative;
+    top: 5px;
 }
 
 /* Changing up margins on desktop */
@@ -369,7 +379,7 @@ form#trail-search input, form#trail-search p {
 }
 
 form#trail-search input[type="submit"] {
-    transition: 0.2s ease all;
+    transition: 0.3s ease all;
 }
 
 form#trail-search input[type="submit"]:hover {
